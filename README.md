@@ -1,27 +1,27 @@
-# 🔍 NetScan AI — Network Security Scanner
+# 🔍 NetScan AI - Network Security Scanner
 
 AI-powered network port scanner with risk analysis, interactive dashboard, and PDF reporting.
 
 ---
 
-## 🚀 Quick Start — Docker (Easiest!) ⭐
+## 🚀 Quick Start - Docker (Easiest!) ⭐
 
 > No need to install Python, Node.js, or PostgreSQL separately!
 
-### Step 1 — Install Docker Desktop
+### Step 1 - Install Docker Desktop
 
 👉 https://www.docker.com/products/docker-desktop
 
 Download and install. Restart your computer after installation.
 
-### Step 2 — Clone the Project
+### Step 2 - Clone the Project
 
 ```bash
 git clone https://github.com/Suppa08/netscan-ai.git
 cd netscan-ai
 ```
 
-### Step 3 — Build and Run
+### Step 3 - Build and Run
 
 ```bash
 docker-compose up --build
@@ -35,7 +35,7 @@ First build takes 5-10 minutes. When complete you will see:
 ✅ Frontend running on port 80
 ```
 
-### Step 4 — Add Demo Data (First time only)
+### Step 4 - Add Demo Data (First time only)
 
 Open a new terminal and run:
 
@@ -50,7 +50,7 @@ Created 3 demo scans
 Seeding complete!
 ```
 
-### Step 5 — Open in Browser
+### Step 5 - Open in Browser
 
 ```
 http://localhost
@@ -88,14 +88,14 @@ docker-compose up
 | PostgreSQL | 16      | https://postgresql.org/download   |
 | Git        | Latest  | https://git-scm.com/downloads     |
 
-### Step 1 — Clone the Project
+### Step 1 - Clone the Project
 
 ```bash
 git clone https://github.com/Suppa08/netscan-ai.git
 cd netscan-ai
 ```
 
-### Step 2 — Database Setup
+### Step 2 - Database Setup
 
 ```bash
 psql -U postgres
@@ -108,7 +108,7 @@ GRANT ALL PRIVILEGES ON DATABASE netscan_db TO netscan;
 \q
 ```
 
-### Step 3 — Backend Setup
+### Step 3 - Backend Setup
 
 ```bash
 cd backend
@@ -138,7 +138,7 @@ uvicorn app.main:app --reload --port 8000
 
 API documentation available at: http://localhost:8000/docs
 
-### Step 4 — Frontend Setup
+### Step 4 - Frontend Setup
 
 Open a new terminal:
 
@@ -156,7 +156,7 @@ npm install
 npm run dev
 ```
 
-### Step 5 — Open in Browser
+### Step 5 - Open in Browser
 
 ```
 http://localhost:3000
@@ -166,14 +166,14 @@ Login credentials: `admin` / `admin123`
 
 ### Starting the App Every Day
 
-**Terminal 1 — Backend:**
+**Terminal 1 - Backend:**
 ```bash
 cd backend
 venv\Scripts\activate
 uvicorn app.main:app --reload --port 8000
 ```
 
-**Terminal 2 — Frontend:**
+**Terminal 2 - Frontend:**
 ```bash
 cd frontend
 npm run dev
@@ -198,15 +198,15 @@ npm run dev
 
 ## 📊 Dashboard Features
 
-- **Total Scans** — count of all historical scans
-- **Hosts Scanned** — total unique IPs assessed
-- **Open Ports** — cumulative count across all scans
-- **High Risk Hosts** — hosts with critical or high risk score
-- **Port Distribution** — bar chart of most commonly open ports
-- **Risk Distribution** — pie chart breakdown by risk level
-- **Scan Activity** — 30-day scan activity timeline
-- **AI Recommendations** — prioritized security action list
-- **PDF Export** — professional downloadable scan reports
+- **Total Scans** - count of all historical scans
+- **Hosts Scanned** - total unique IPs assessed
+- **Open Ports** - cumulative count across all scans
+- **High Risk Hosts** - hosts with critical or high risk score
+- **Port Distribution** - bar chart of most commonly open ports
+- **Risk Distribution** - pie chart breakdown by risk level
+- **Scan Activity** - 30-day scan activity timeline
+- **AI Recommendations** - prioritized security action list
+- **PDF Export** - professional downloadable scan reports
 
 ---
 
@@ -235,7 +235,7 @@ scanme.nmap.org        # Legal public practice target by Nmap
 
 ## 🤖 AI / ML
 
-### Default — Rule-Based Scoring (No training required)
+### Default - Rule-Based Scoring (No training required)
 
 Instant risk scoring using weighted port risk rules and expert security knowledge base.
 Works out of the box with no model training needed.

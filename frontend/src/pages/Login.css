@@ -1,0 +1,99 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,212,170,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 100% 100%, rgba(30,144,255,0.04) 0%, transparent 70%);
+}
+
+.grid-dot {
+  position: absolute;
+  width: 1px; height: 1px;
+  background: rgba(0,212,170,0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,212,170,0.4);
+}
+
+.login-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.4s ease;
+}
+
+.login-logo {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+.login-logo h1 {
+  font-size: 28px; font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+}
+.login-logo h1 span { color: var(--accent); }
+
+.login-subtitle {
+  color: var(--text-muted); font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.login-tabs {
+  display: flex;
+  background: var(--bg-dark);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+.login-tabs button {
+  flex: 1; padding: 8px;
+  border: none; border-radius: 6px;
+  background: transparent; color: var(--text-muted);
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+}
+.login-tabs button.active { background: var(--bg-card); color: var(--accent); }
+
+.pw-wrapper { position: relative; }
+.pw-wrapper .form-input { width: 100%; padding-right: 40px; }
+.pw-toggle {
+  position: absolute; right: 12px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  color: var(--text-muted); cursor: pointer;
+}
+
+.login-error {
+  background: var(--danger-dim);
+  border: 1px solid rgba(255,71,87,0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--danger);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.login-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

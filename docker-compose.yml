@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+
+  # ── PostgreSQL ─────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: netscan_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: netscan
+      POSTGRES_PASSWORD: netscan_pass
+      POSTGRES_DB: netscan_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U netscan"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI Backend ────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: netscan_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+asyncpg://netscan:netscan_pass@db:5432/netscan_db
+      SECRET_KEY: ${SECRET_KEY:-super-secret-change-in-production}
+      DEBUG: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ml_models:/app/ml_models
+    networks:
+      - netscan_net
+    # Needs NET_ADMIN for SYN scans (optional)
+    # cap_add:
+    #   - NET_ADMIN
+    #   - NET_RAW
+
+  # ── React Frontend ─────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: netscan_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - netscan_net
+
+volumes:
+  postgres_data:
+  ml_models:
+
+networks:
+  netscan_net:
+    driver: bridge

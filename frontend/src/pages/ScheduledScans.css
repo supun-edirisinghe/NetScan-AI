@@ -1,0 +1,85 @@
+.schedule-form-card {
+  margin-bottom: 24px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.scheduled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scheduled-card {
+  transition: all 0.2s;
+}
+
+.scheduled-card.inactive {
+  opacity: 0.6;
+}
+
+.scheduled-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.scheduled-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.scheduled-target {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.scheduled-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+  padding: 4px;
+}
+
+.toggle-btn.active {
+  color: var(--accent);
+}
+
+.toggle-btn:hover {
+  color: var(--accent);
+}
+
+.scheduled-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}

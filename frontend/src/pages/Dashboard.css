@@ -1,0 +1,87 @@
+.loading-center {
+  display: flex; align-items: center; justify-content: center;
+  height: 60vh;
+}
+
+/* Stat cards */
+.stat-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  cursor: default;
+}
+.stat-card:hover { transform: translateY(-2px); border-color: var(--border-bright); }
+
+.stat-icon-wrap {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-accent .stat-icon-wrap { background: var(--accent-dim); color: var(--accent); }
+.stat-info .stat-icon-wrap    { background: var(--info-dim); color: var(--info); }
+.stat-warning .stat-icon-wrap { background: var(--warning-dim); color: var(--warning); }
+.stat-danger .stat-icon-wrap  { background: var(--danger-dim); color: var(--danger); }
+
+.stat-value {
+  font-size: 28px; font-weight: 800;
+  font-family: var(--font-mono);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+
+/* Charts */
+.chart-title { font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+.chart-title-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.chart-title-row .chart-title { margin-bottom: 0; }
+
+.btn-text {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: none; border: none; cursor: pointer;
+  color: var(--accent); font-size: 12px; font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.pie-wrap { display: flex; align-items: center; }
+.pie-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.legend-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--text-muted);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-val { margin-left: auto; font-weight: 700; color: var(--text); font-family: var(--font-mono); }
+
+.empty-chart {
+  height: 200px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; color: var(--text-dim); font-size: 13px;
+}
+
+/* Recent scans */
+.recent-list { display: flex; flex-direction: column; gap: 8px; }
+.recent-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.recent-item:hover { border-color: var(--accent); background: var(--bg-hover); }
+.recent-name { font-size: 13px; font-weight: 600; }
+.recent-target { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.recent-right { display: flex; align-items: center; gap: 8px; }
+.recent-score {
+  font-family: var(--font-mono); font-size: 16px; font-weight: 700;
+  color: var(--accent); min-width: 32px; text-align: right;
+}
+
+.empty-list { color: var(--text-muted); font-size: 13px; padding: 20px 0; text-align: center; }

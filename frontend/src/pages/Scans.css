@@ -1,0 +1,66 @@
+.scans-toolbar {
+  margin-bottom: 16px;
+}
+
+.search-wrap { position: relative; max-width: 320px; }
+.search-icon {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+}
+.search-input { padding-left: 34px; }
+
+.scans-table { padding: 0; overflow: hidden; }
+.scans-table table {
+  width: 100%; border-collapse: collapse;
+}
+.scans-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+}
+.scans-table td {
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.scans-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.scans-table tbody tr:hover { background: var(--bg-hover); }
+.scans-table tbody tr:last-child td { border-bottom: none; }
+
+.scan-name { font-weight: 600; }
+.text-muted { color: var(--text-muted); }
+.date-cell { font-size: 12px; font-family: var(--font-mono); }
+
+.risk-score {
+  font-family: var(--font-mono);
+  font-size: 15px; font-weight: 700;
+}
+
+.row-actions { display: flex; gap: 4px; }
+.icon-btn {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+.icon-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-dim); }
+
+.empty-scans {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; padding: 80px 0;
+  color: var(--text-muted);
+}

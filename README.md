@@ -53,7 +53,7 @@ Seeding complete!
 ### Step 5 - Open in Browser
 
 ```
-http://localhost
+
 ```
 
 | Field    | Value    |
@@ -136,7 +136,7 @@ python seed.py
 uvicorn app.main:app --reload --port 8000
 ```
 
-API documentation available at: http://localhost:8000/docs
+API documentation available at: 
 
 ### Step 4 - Frontend Setup
 
@@ -159,7 +159,7 @@ npm run dev
 ### Step 5 - Open in Browser
 
 ```
-http://localhost:3000
+
 ```
 
 Login credentials: `admin` / `admin123`
